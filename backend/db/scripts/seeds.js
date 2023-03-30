@@ -32,34 +32,51 @@ const runSeeds = async () => {
     age: 29
   })
 
+  const sam = await Student.create({
+    firstName: "Sam",
+    lastName: "Ye",
+    age: 31
+  })
+
+  const june = await Student.create({
+    firstName: "June",
+    lastName: "Choi",
+    age: 31
+  })
+
+
   // Course.hasOne(Student);
   // scienceCourse.setStudent(autumn);
   // mathCourse.setStudent(alvin);
   
   // Course.hasMany(Student);
-  scienceCourse.addStudent(autumn);
-  scienceCourse.addStudent(donald);
-  mathCourse.addStudent(alvin);
+  // scienceCourse.addStudent(autumn);
+  // scienceCourse.addStudent(donald);
+  // mathCourse.addStudent(alvin);
+  // mathCourse.addStudent(autumn);
 
-  const count = await scienceCourse.countStudents();
-  console.log(count);
+  // const count = await scienceCourse.countStudents();
+  // console.log(count);
   
-  const studentss = await scienceCourse.getStudents({ raw: true });
-  console.log(studentss);
+  // const studentss = await scienceCourse.getStudents({ raw: true });
+  // console.log('science students')
+  // console.log(studentss);
 
-
- 
+  // const autumnCourses = await autumn.getCourses({raw: true});
+  // console.log('autumn\'s courses');
+  // console.log(autumnCourses);
   
-  const courses = await Course.findAll({
-    raw: true
-  });
+  // const courses = await Course.findAll({
+  //   raw: true
+  // });
 
-  const students = await Student.findAll({
-    raw: true
-  });
+  // const students = await Student.findAll({
+  //   raw: true
+  // });
 
-  console.table(courses);
-  console.table(students);
+  // console.table(courses);
+  // console.table(students);
+
 };
 
 runSeeds();

@@ -9,6 +9,9 @@ const Student = require('./Student');
 
 // Course.hasOne(Student); //hasOne teacher 
 
-Course.hasMany(Student);
+Course.belongsToMany(Student, {through: 'Enrollment'});
+
+Student.belongsToMany(Course, {through: 'Enrollment'});
+
 
 sequelize.sync();
